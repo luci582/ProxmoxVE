@@ -23,6 +23,19 @@ msg_info "Installing OpenClaw"
 $STD npm install -g openclaw@latest
 msg_ok "Installed OpenClaw"
 
+msg_info "Configuring OpenClaw"
+mkdir -p /root/.openclaw
+cat <<EOF >/root/.openclaw/openclaw.json
+{
+  "gateway": {
+    "controlUi": {
+      "dangerouslyAllowHostHeaderOriginFallback": true
+    }
+  }
+}
+EOF
+msg_ok "Configured OpenClaw"
+
 msg_info "Creating Service"
 cat <<EOF >/etc/systemd/system/openclaw.service
 [Unit]
@@ -32,7 +45,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/bin/openclaw gateway --port 18789 --allow-unconfigured
+ExecStart=/bin/openclaw gateway --port 18789 --allow-unconfigured --bind lan
 Restart=on-failure
 RestartSec=5
 
