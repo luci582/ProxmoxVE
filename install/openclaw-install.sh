@@ -32,7 +32,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/local/bin/openclaw gateway --port 18789
+ExecStart=/bin/openclaw gateway --port 18789 --allow-unconfigured
 Restart=on-failure
 RestartSec=5
 

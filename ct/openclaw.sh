@@ -23,7 +23,7 @@ function update_script() {
   header_info
   check_container_storage
   check_container_resources
-  if [[ ! -f /usr/local/bin/openclaw ]]; then
+  if [[ ! -f /bin/openclaw ]]; then
     msg_error "No ${APP} Installation Found!"
     exit
   fi
