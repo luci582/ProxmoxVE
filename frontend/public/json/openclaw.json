@@ -1,0 +1,40 @@
+{
+  "name": "OpenClaw",
+  "slug": "openclaw",
+  "categories": [
+    20
+  ],
+  "date_created": "2026-03-02",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 18789,
+  "documentation": "https://docs.openclaw.ai",
+  "website": "https://openclaw.ai",
+  "logo": "https://avatars.githubusercontent.com/u/252820863?v=4",
+  "config_path": "/root/.openclaw/openclaw.json",
+  "description": "OpenClaw is a multi-channel personal AI assistant that runs on your own machine and integrates with WhatsApp, Telegram, Discord, Slack, and 50+ other platforms. It offers persistent memory, system access, and full data ownership.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/openclaw.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 2048,
+        "hdd": 8,
+        "os": "debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "After installation, configure your AI model and channels in /root/.openclaw/openclaw.json. API keys for LLM providers and messaging platform tokens must be added manually.",
+      "type": "info"
+    }
+  ]
+}
